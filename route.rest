@@ -1,1 +1,29 @@
 GET http://localhost:3000/
+
+###
+GET http://localhost:3000/mongodb/all
+
+###
+GET http://localhost:3000/mongodb/64a8631f4128ad1127687eaf
+
+###
+POST http://localhost:3000/mongodb/
+Content-Type: application/json
+
+{
+    "title": "TESTING",
+    "description": "TESTING",
+    "source": "https://www.TESTING.com/mongodb/"
+}
+
+###
+DELETE http://localhost:3000/mongodb/64a86a22ab4ec44c461df953
+
+###
+
+PATCH http://localhost:3000/mongodb/64a86d4365048ff03b3746d8
+Content-Type: application/json
+
+{
+    "title":"FOR TESING PURPOSES"
+}

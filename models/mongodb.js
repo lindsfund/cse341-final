@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('mongoose-type-url');
 
 const mongoSchema = new mongoose.Schema({
     title: {
@@ -9,8 +10,10 @@ const mongoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sources: {
-        type: String,
+    source: {
+        type: mongoose.SchemaTypes.Url,
         required: true
     }
 })
+
+module.exports = mongoose.model('mongodb', mongoSchema);

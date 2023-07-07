@@ -13,4 +13,6 @@ const nodeSchema = new mongoose.Schema({
         type: String,
         required: true
     }
-})
+});
+
+module.exports = mongoose.model('node', nodeSchema);
