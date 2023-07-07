@@ -1,5 +1,8 @@
+
 GET http://localhost:3000/
 
+
+//-----------------------------------MongoDB Routes
 ###
 GET http://localhost:3000/mongodb/all
 
@@ -17,10 +20,35 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/mongodb/64a86a22ab4ec44c461df953
+DELETE http://localhost:3000/mongodb/64a86d4365048ff03b3746d8
 
 ###
 PATCH http://localhost:3000/mongodb/64a86d4365048ff03b3746d8
+Content-Type: application/json
+{
+    "title":"FOR TESING PURPOSES"
+}
+
+//-----------------------------------NodeJS Routes
+GET http://localhost:3000/node
+
+###
+GET http://localhost:3000/node/64a874dfbd7aedf36f575f8b
+###
+POST http://localhost:3000/node/
+Content-Type: application/json
+
+{
+    "title": "tutTeacher",
+    "description": "a full step by step tutorial of nodeJS",
+    "source": "https://www.tutorialsteacher.com/nodejs"
+}
+
+###
+DELETE http://localhost:3000/node/64a87518bd7aedf36f575f91
+
+###
+PATCH http://localhost:3000/node/64a87518bd7aedf36f575f91
 Content-Type: application/json
 
 {

@@ -9,7 +9,7 @@ const nodeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    sources: {
+    source: {
         type: String,
         required: true
     }

@@ -1,4 +1,4 @@
-*** MongoDB Resources
+***-------------------------------------------- MongoDB Resources
 
 {
     "title": "officialDocs",
@@ -22,6 +22,37 @@
     "title": "mongoDbVideo",
     "description": "basic intro to mongoDB in video form",
     "source": "https://www.youtube.com/playlist?list=PL4RCxklHWZ9shwyfN0KT1KiOX6OOkNJaq"
+}
+
+***---------------------------------------------------------NodeJS Resources
+{
+    "title": "nodeJsDocs",
+    "description": "The official NodeJS Documentation",
+    "source": "https://nodejs.org/en/docs"
+}
+
+{
+    "title": "w3schoolsNode",
+    "description": "w3school's tutorial for NodeJs",
+    "source": "https://www.w3schools.com/nodejs/"
+}
+
+{
+    "title": "codeCademy",
+    "description": "codecadem's 'Learn Node.js' course",
+    "source": "https://www.codecademy.com/learn/learn-node-js"
+}
+
+{
+    "title": "tutTeacher",
+    "description": "a full step by step tutorial of nodeJS",
+    "source": "https://www.tutorialsteacher.com/nodejs"
+}
+
+{
+    "title": "webDevSimp",
+    "description": "A playlist of viedos that provide a walk through of various nodejs topics",
+    "source": "https://www.youtube.com/playlist?list=PLZlA0Gpn_vH_uZs4vJMIhcinABSTUH2bY"
 }
 
 {
