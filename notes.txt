@@ -1,3 +1,5 @@
+*** MongoDB Resources
+
 {
     "title": "officialDocs",
     "description": "Official Documentation for MongoDB",
@@ -8,6 +10,18 @@
     "title": "w3schoolsMondB",
     "description": "w3school's tutorial for MongoDb",
     "source": "https://www.w3schools.com/mongodb/"
+}
+
+{
+    "title": "geeksForGeeks",
+    "description": "mongoDB tutorial from the geeks at GeeksForGeeks",
+    "source": "https://www.geeksforgeeks.org/mongodb-tutorial/"
+}
+
+{
+    "title": "mongoDbVideo",
+    "description": "basic intro to mongoDB in video form",
+    "source": "https://www.youtube.com/playlist?list=PL4RCxklHWZ9shwyfN0KT1KiOX6OOkNJaq"
 }
 
 {
