@@ -1,18 +1,30 @@
-const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-//* connect to MongoDb via mongoose
-const username = encodeURIComponent(process.env.DB_USERNAME);
-const password = encodeURIComponent(process.env.DB_PASSWORD);
-const cluster = process.env.DB_CLUSTER;
+const MongoClient = require('mongodb').MongoClient;
 
-mongoose.connect(`mongodb+srv://${username}:${password}@${cluster}`,{dbName: 'teamAssignments'});  
-const db = mongoose.connection;  
-  //show connection error
-  db.on('error', (error) => console.log(error));
-  //show successful connection
-  db.once('open', () => console.log('Connected to DB'));
+let _db;
 
+const initDb = (callback) => {
+  if (_db) {
+    console.log('Database is already initialized!');
+    return callback(null, _db);
+  }
+  MongoClient.connect(process.env.MONGODB_URI)
+    .then((client) => {
+      _db = client;
+      callback(null, _db);
+    })
+    .catch((err) => {
+      callback(err);
+    });
+};
 
-module.exports = db;
+const getDb = () => {
+  if (!_db) {
+    throw Error('Database not initialized!');
+  }
+  return _db;
+};
+
+module.exports = { initDb, getDb };
