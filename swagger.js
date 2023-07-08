@@ -3,9 +3,9 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Course Learning Resources',
-    description: 'Team Project'
+    description: 'This is our last team API Project for a Course Learning Resources Website'
   },
-  host: 'cse341-project-b2zk.onrender.com',
+  host: 'course-learning-resources.onrender.com',
   schemes: ['https']
 };
 
