@@ -5,10 +5,10 @@
     "description": "This is our last team API Project for a Course Learning Resources Website",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse341-team3.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
