@@ -5,8 +5,8 @@ const doc = {
     title: 'Course Learning Resources',
     description: 'This is our last team API Project for a Course Learning Resources Website'
   },
-  host: 'localhost:3000',
-  schemes: ['http']
+  host: 'cse341-team3.onrender.com',
+  schemes: ['https']
 };
 
 const outputFile = 'swagger.json';
