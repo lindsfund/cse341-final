@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
+const nodeController = require('../controllers/node');
 
-router.get('/', (req, res) => {
-    res.send('NodeJS');
-});
+router.get('/', nodeController.getAllNodeData);
 
-//get all resources
-//get one resource
-//create new resource
-//update resource
-//delete resource
+router.get('/:id', nodeController.getNodeById);
+
+router.post('/', nodeController.createNodeData);
+
+router.put('/:id', nodeController.updateNodeData);
+
+router.delete('/:id', nodeController.deleteNodeData);
+
 module.exports = router;

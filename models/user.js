@@ -1,40 +1,55 @@
-const mongoose = require('mongoose');
 
-const mongoSchema = new mongoose.Schema({
-    firstName: {
-        type: String,
-        required: false,
-    },
-    lastName: {
-        type: String,
-        required: false,
-    },
-    email: {
-        type: String,
-        required: false,
-    },
-    googleId: {
-        type: String,
-        required: false,
-    },
-    gender: {
-        type: String,
-        required: false,
-    },
-    birthday: {
-        type: String,
-        required: false,
-    },
-    password: {
-        type: String,
-        required: false,
-    },
-    city: {
-        type: String,
-        required: false,
-    },
-    country: {
-        type: String,
-        required: false,
-    }
-});
+const getAll = async (mongodb) => {
+    const result = await mongodb.getDb().db('learnResources').collection('users').find();
+    return result.toArray()
+  }
+  
+  const getSingle = async (mongodb, userId) => {
+    const result = await mongodb
+      .getDb()
+      .db('learnResources')
+      .collection('users')
+      .find({ _id: userId });
+    return result.toArray()
+  };
+  
+  const createUser = async (mongodb, newUser) => {
+    const response = await mongodb.getDb()
+                                .db('learnResources')
+                                .collection('users')
+                                .insertOne(newUser)
+    return response
+  }
+  
+  const updateUser = async (mongodb, userId, newUser) => {
+    const response = await mongodb.getDb()
+                                  .db('learnResources')
+                                  .collection('users')
+                                  .replaceOne(
+                                      {_id: userId},
+                                      newUser
+                                    )
+    return response
+  }
+  
+  
+  const deleteUser = async (mongodb, userId) => {
+    const response = await mongodb.getDb()
+                                  .db('learnResources')
+                                  .collection('users')
+                                  .deleteOne(
+                                      {_id: userId}
+                                  )
+    return response
+  }
+  
+  
+  module.exports = { 
+    getAll, 
+    getSingle, 
+    createUser, 
+    updateUser, 
+    deleteUser
+  };
+  
+  

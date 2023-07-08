@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const userRouter = require('./users');
+const userRouter = require('./user');
 const dbRouter =require('./mongoDB');
 const nodeRouter = require('./node');
 const renderRouter = require('./render');
