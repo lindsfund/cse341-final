@@ -1,24 +1,29 @@
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
-const db = require("./db/connect");
+const mongodb = require("./db/connect");
 
 const port = process.env.PORT || 3000;
 
-app.use(express.json());
+app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+app.use('/', require('./routes'));
 
-const homeRouter = require("./routes/index");
-app.use("/", homeRouter);
+process.on('uncaughtException', (err, origin) => {
+  console.log(
+    process.stderr.fd,
+    `Caught exception: ${err}\n` + `Exception origin: ${origin}`
+  );
+});
 
-const userRouter = require("./routes/users");
-app.use("/users", userRouter);
-
-const mongoRouter = require("./routes/mongoDB");
-app.use("/mongodb", mongoRouter);
-
-const nodeRouter = require("./routes/node");
-app.use("/node", nodeRouter);
-
-const renderRouter = require("./routes/render");
-app.use("/render", renderRouter);
-
-app.listen(port, () => console.log(`Server listening on ${port}`));
+mongodb.initDb((err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    app.listen(port);
+    console.log('Connected to DB and listening on ' + port);
+  }
+});
