@@ -5,7 +5,7 @@
     "description": "Team Project",
     "version": "1.0.0"
   },
-  "host": "cse341-project-b2zk.onrender.com",
+  "host": "course-learning-resources.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
