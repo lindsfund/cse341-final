@@ -66,7 +66,7 @@ const updateRenderData = async (req, res) => {
     const render = {
       title: req.body.title,
       description: req.body.description,
-      sources: req.body.sources
+      source: req.body.source
     };
     const response = await mongodb
       .getDb()
