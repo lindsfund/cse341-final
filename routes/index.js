@@ -1,18 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const userRouter = require('./users');
-const dbRouter =require('./mongoDB');
-const nodeRouter = require('./node');
-const renderRouter = require('./render');
-
-router.get('/', (req, res) => {
-    res.send('HOMEPAGE')
-});
-
-router.use('/users', userRouter);
-router.use('/mongoDB', dbRouter);
-router.use('/nodeJS', nodeRouter);
-router.use('/render', renderRouter);
+//router.use('/', require('./swagger'));
+router.use('/render', require('./render'));
+router.use('/mongodb', require('./mongodb'));
+router.use('/node', require('./node'));
+router.use('/users', require('./users'));
 
 module.exports = router;

@@ -9,10 +9,10 @@ router.get('/', renderController.getAllRenderData);
 
 router.get('/:id', renderController.getRenderById);
 
-router.post('/', requiresAuth(), isAuthenticated, validation.saveRender, renderController.createRenderData);
+router.post('/', renderController.createRenderData);
 
-router.put('/:id', requiresAuth(), isAuthenticated, validation.saveRender, renderController.updateRenderData);
+router.put('/:id', renderController.updateRenderData);
 
-router.delete('/:id', requiresAuth(), isAuthenticated, renderController.deleteRenderData);
+router.delete('/:id', renderController.deleteRenderData);
 
 module.exports = router;
