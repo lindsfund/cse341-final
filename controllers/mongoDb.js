@@ -35,12 +35,13 @@ const getMongoDbById = async (req, res) => {
 
 const createMongoDbData = async (req, res) => {
   try {
+    
     const mongoDb = {
       title: req.body.title,
       description: req.body.description,
       sources: req.body.sources
     };
-
+    
     const response = await mongodb.getDb().db('learnResources').collection('mongoDB').insertOne(mongoDb);
     if (response.acknowledged) {
       console.log('Created successfully!');
