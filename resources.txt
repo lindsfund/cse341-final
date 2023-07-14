@@ -1,0 +1,82 @@
+        "title" : "",
+        "description" : "",
+        "source" : ""
+ 
+ /// NODEJS   
+    
+    {
+        "title" : "nodJsDocs",
+        "description" : "The official NodeJS Documentation",
+        "source" : "https://nodejs.org/en/docs"
+    },
+    {
+        "title" : "w3schoolsNode",
+        "description" : "w3school's tutorial for NodeJs",
+        "source" : "https://www.w3schools.com/nodejs/"
+    },
+    {
+        "title" : "codeCademy",
+        "description" : "codeCademy's 'Learn Node.js' course",
+        "source" : "https://www.codecademy.com/learn/learn-node-js"
+    },
+    {
+        "title" : "webDevSimplified",
+        "description" : "A playlist of various Nodejs topics",
+        "source" : "https://www.youtube.com/playlist?list=PLZlA0Gpn_vH_uZs4vJMIhcinABSTUH2bY"
+    },
+    {
+        "title" : ""tutTeacher"",
+        "description" : "a full step by step tutorial of nodeJS",
+        "source" : "https://www.tutorialsteacher.com/nodejs"
+    }
+
+
+/// render
+
+{
+   "title" : "Render Docs",
+    "description" : "official Render Documentation",
+    "source" : "https://render.com/docs"
+},
+{
+   "title" : "Website Hosting with Render.com",
+    "description" : "basic setup of a site hosted on Render",
+    "source" : "https://tutorials.yax.com/articles/website-hosting-with-render.html"
+},
+{
+   "title" : "How I run my web app using Render",
+    "description" : "Design emphasis article on deploying to Render",
+    "source" : "https://medium.com/swlh/how-i-run-my-web-app-using-render-b8634b5679fb"
+},
+{
+   "title" : "Andy's Tech Tutorials",
+    "description" : "How to host a website on Render(video)",
+    "source" : "https://www.youtube.com/watch?v=aLdIdmQOuzY"
+}
+
+///users
+{
+    "firstName" : "Tony",
+    "lastName":"Stark",
+    "email":"iamironman@avengers.com",
+    "googleId":"",
+    "gender":"male",
+    "birthday":"05/29/1970",
+    "password":"iamironman",
+    "city":"Manhattan",
+    "country":"USA",
+    "role":"admin"
+},
+{
+    "firstName" : "Peter",
+    "lastName":"Parker",
+    "email":"spiderman@avengers.com",
+    "googleId":"",
+    "gender":"male",
+    "birthday":"8/10/2001",
+    "password":"spideysense",
+    "city":"New York City",
+    "country":"USA",
+    "role":"intern"
+}
+
