@@ -112,10 +112,16 @@ const deleteMongoDbData = async (req, res) => {
   }
 };
 
+function sum(a,b){
+  let c = a + b
+  return c;
+}
+
 module.exports = {
   getAllMongoDbData,
   getMongoDbById,
   createMongoDbData,
   updateMongoDbData,
-  deleteMongoDbData
+  deleteMongoDbData,
+  sum
 };
