@@ -3,7 +3,7 @@ const ObjectId = require('mongodb').ObjectId;
 
 const getAllRenderData = async (req, res) => {
   try {
-    const result = await mongodb.getDb().db('teamProject').collection('render').find();
+    const result = await mongodb.getDb().db('learnResources').collection('render').find();
     result.toArray().then((render) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(render);
@@ -21,7 +21,7 @@ const getRenderById = async (req, res) => {
     const renderId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
-      .db('teamProject')
+      .db('learnResources')
       .collection('render')
       .find({ _id: renderId });
     result.toArray().then((render) => {
@@ -41,7 +41,7 @@ const createRenderData = async (req, res) => {
       sources: req.body.sources
     };
 
-    const response = await mongodb.getDb().db('teamProject').collection('render').insertOne(render);
+    const response = await mongodb.getDb().db('learnResources').collection('render').insertOne(render);
     if (response.acknowledged) {
       console.log('Created successfully!');
       res.setHeader('Content-Type', 'application/json');
@@ -70,7 +70,7 @@ const updateRenderData = async (req, res) => {
     };
     const response = await mongodb
       .getDb()
-      .db('teamProject')
+      .db('learnResources')
       .collection('render')
       .replaceOne({ _id: renderId }, render);
     console.log(response);
@@ -95,7 +95,7 @@ const deleteRenderData = async (req, res) => {
     const renderId = new ObjectId(req.params.id);
     const response = await mongodb
       .getDb()
-      .db('teamProject')
+      .db('learnResources')
       .collection('render')
       .deleteOne({ _id: renderId });
     if (response.deletedCount === 1) {
