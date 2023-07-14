@@ -1,5 +1,6 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const validation = require('../midware/validate');
 
 const getAllRenderData = async (req, res) => {
   try {
@@ -41,6 +42,15 @@ const createRenderData = async (req, res) => {
       sources: req.body.sources
     };
 
+    const validationResponse = validation.renderValidation(render);
+
+    if (validationResponse !== true) {
+      return res.status(400).json({
+        message: "Validation failed",
+        errors: validationResponse,
+      });
+    }
+
     const response = await mongodb.getDb().db('learnResources').collection('render').insertOne(render);
     if (response.acknowledged) {
       console.log('Created successfully!');
@@ -68,6 +78,16 @@ const updateRenderData = async (req, res) => {
       description: req.body.description,
       source: req.body.source
     };
+
+    const validationResponse = validation.renderValidation(render);
+
+    if (validationResponse !== true) {
+      return res.status(400).json({
+        message: "Validation failed",
+        errors: validationResponse,
+      });
+    }
+
     const response = await mongodb
       .getDb()
       .db('learnResources')
