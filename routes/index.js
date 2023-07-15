@@ -1,6 +1,17 @@
 const express = require('express');
 const router = express.Router();
+const authController = require('../controllers/auth')
 
+router.get('/login', authController.authenticateWithGoogle);
+
+router.get('/google/callback', 
+    authController.handleGoogleCallback
+);
+
+router.get('/logout', (req, res, next) => {
+    res.logout()
+})
+ 
 const userRouter = require('./user');
 const dbRouter =require('./mongoDB');
 const nodeRouter = require('./node');

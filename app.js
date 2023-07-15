@@ -2,10 +2,24 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const app = express();
 const mongodb = require("./db/connect");
+const passport = require('passport')
+const { configureGoogleStrategy } = require('./config/passport');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
+require('dotenv').config()
+
 const port = process.env.PORT || 3000;
+
+configureGoogleStrategy(passport);
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+
+passport.deserializeUser((user, done) => {
+  done(null, user);
+});
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use(bodyParser.json());
