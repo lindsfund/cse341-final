@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const renderController = require('../controllers/render');
+const render = require('../controllers/render');
+const {isAuthenticated} = require("../midware/authenticate");
 
-router.get('/', renderController.getAllRenderData);
+router.get('/', render.getAllRenderData);
 
-router.get('/:id', renderController.getRenderById);
+router.get('/:id', render.getRenderById);
 
-router.post('/', renderController.createRenderData);
+router.post('/', isAuthenticated, render.createRenderData);
 
-router.put('/:id', renderController.updateRenderData);
+router.put('/:id', isAuthenticated, render.updateRenderData);
 
-router.delete('/:id', renderController.deleteRenderData);
+router.delete('/:id', isAuthenticated, render.deleteRenderData);
 
 module.exports = router;
