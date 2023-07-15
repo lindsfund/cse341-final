@@ -7,7 +7,7 @@ router.use(auth(authenticator.config));
 router.use('/', require('./authenticate'));
 router.use('/', require('./swagger'));
 router.use('/render', require('./render'));
-router.use('/mongodb', require('./mongodb'));
+router.use('/mongo', require('./mongo'));
 router.use('/node', require('./node'));
 router.use('/user', require('./user'));
 
