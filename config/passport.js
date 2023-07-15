@@ -13,13 +13,13 @@ const configureGoogleStrategy = (passport) => {
       },
       async (accessToken, refreshToken, profile, done) => {
         try {
-            const existingUser = await userModel.getSingle(mongodb, profile.id);
+           /*  const existingUser = await userModel.getSingle(mongodb, profile.id);
   
             if (existingUser[0]) {
               // User already exists, return the user object
               return done(null, existingUser);
             }
-  
+   */
            /*  // Admin does not exist, create a new admin in the database
             const newUser = await userModel.create(mongodb, {
                 googleId: profile.id,
@@ -35,7 +35,7 @@ const configureGoogleStrategy = (passport) => {
         catch (error) {
             return done(error);
         }
-      }
+      } 
     )
   )
 }
