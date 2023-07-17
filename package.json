@@ -21,12 +21,15 @@
   "dependencies": {
     "autogen": "^0.0.1",
     "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "fastest-validator": "^1.17.0",
+    "jsonwebtoken": "^9.0.1",
     "mongodb": "^5.7.0",
     "mongoose": "^7.3.2",
+    "passport": "^0.6.0",
     "swagger": "^0.7.5",
     "swagger-ui-express": "^5.0.0"
   },

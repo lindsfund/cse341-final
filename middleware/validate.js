@@ -14,17 +14,26 @@ function resourceValidation(resource) {
     const v = new Validator();
     return v.validate(resource, resourceSchema);
     
-} //end mongo validation
+} //end resource validation
 
 function userValidation(user) {
     const uSchema = {
-        //user validation code here
+        firstName:{type: 'string', optional: false, empty: false, max: 20},
+        lastName:{type: 'string', optional: false, empty: false, max: 20},
+        email:{type: email, optional:false, empty: false},
+        // googleId:{type: 'any', optional: true},
+        gender:{type: 'string', optional: false, empty: false, max: 20},
+        birthday:"01/09/1982",
+        password:{type: 'string', optional: false, empty: false, max: 20},
+        city:{type: 'string', optional: false, empty: false, max: 20},
+        country:{type: 'string', optional: false, empty: false, max: 20},
+       
     }
     
     const v = new Validator();
     return v.validate(user, uSchema);
 
-} //end node validation
+} //end user validation
 
 module.exports = {
     resourceValidation,
@@ -37,3 +46,14 @@ module.exports = {
 //     source: "https://testing.com",
 // }
 // console.log("test", mongoValidation(mongoDBtest,resourceSchema));
+
+// userTest = {
+//     "firstName":"Lindsey",
+//     "lastName":"Fund",
+//     "email":"fun20001@byui.edu",
+//     "gender":"female",
+//     "birthday":"01/09/1982",
+//     "password":"P@ssw0rd!",
+//     "city":"Washington DC",
+//     "country":"USA"
+// }
