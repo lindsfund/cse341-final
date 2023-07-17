@@ -12,3 +12,31 @@ Content-Type: application/json;
     "description":"TESTING TESTING",
     "sources":"https://www.testing.com"
 }
+
+###
+GET http://localhost:3000/node/
+
+###
+POST http://localhost:3000/node/
+Content-Type: application/json;
+
+{
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
+}
+
+###
+GET http://localhost:3000/render/
+
+###
+POST http://localhost:3000/render/
+Content-Type: application/json;
+
+{
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
+}
+
+### 

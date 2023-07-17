@@ -3,15 +3,20 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 const validate = require('../middleware/validate');
 
+function sum(a,b){
+  const c = a + b;
+  return c;
+}
+
 const getAllMongoDbData = async (req, res) => {
   try {
     const result = await mongodb.getDb().db('learnResources').collection('mongoDB').find();
     result.toArray().then((mongoDb) => {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(mongoDb);
+    //   res.status(200).json(mongoDb);
     });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    // res.status(500).json({ message: err.message });
   }
 };
 
@@ -123,10 +128,7 @@ const deleteMongoDbData = async (req, res) => {
   }
 };
 
-function sum(a,b){
-  let c = a + b
-  return c;
-}
+
 
 module.exports = {
   getAllMongoDbData,
