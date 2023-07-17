@@ -1,5 +1,7 @@
+const express = require('express');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const validate = require('../middleware/validate');
 
 const getAllMongoDbData = async (req, res) => {
   try {
@@ -35,12 +37,21 @@ const getMongoDbById = async (req, res) => {
 
 const createMongoDbData = async (req, res) => {
   try {
-    
     const mongoDb = {
       title: req.body.title,
       description: req.body.description,
       sources: req.body.sources
     };
+
+  console.log(mongoDb);
+    //validate data entered
+   const validateRes = validate.resourceValidation(mongoDb);
+    console.log(validateRes);
+
+    if(validateRes !== true) {
+
+      return res.status(400).json({message:`invalid values`, error: validate.resourceValidation.message});
+    }
     
     const response = await mongodb.getDb().db('learnResources').collection('mongoDB').insertOne(mongoDb);
     if (response.acknowledged) {

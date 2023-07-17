@@ -8,7 +8,7 @@ POST http://localhost:3000/mongodb/
 Content-Type: application/json;
 
 {
-    "title":"geeksForGeeks",
-    "description":"mongoDB tutorial from the geeks at GeeksForGeeks",
-    "source":"https://geeksforgeeks.org/mongodb-tutorial"
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
 }
