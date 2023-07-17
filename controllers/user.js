@@ -67,7 +67,14 @@ const updateUser = async (req, res, next) => {
     const userId = new ObjectId(req.params.id)
     let hashedPassword = await bcrypt.hashSync(req.body.password, 10)
     const newUser = {
- 
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        gender: req.body.gender,
+        birthday: req.body.birthday,
+        password: hashedPassword,
+        city: req.body.city,
+        country: req.body.country
     }
     const response = await userModel.updateUser(mongodb, userId, newUser);
     if (response.modifiedCount > 0) {

@@ -43,7 +43,7 @@ const handleLocalAuthentication = async(req, res, next) => {
     const { email, password } = req.body
     const existingUser = await userModel.getSingleByEmail(mongodb, email);
 
-    if (!existingUser.length < 0) {
+    if (existingUser.length < 0) {
       console.log('Invalid email or password.');
       return res.status(401).json({ message: 'Authentication failed' });
     }
@@ -53,9 +53,9 @@ const handleLocalAuthentication = async(req, res, next) => {
         return res.status(401).json({ message: 'Authentication failed' });
       }
 
-      const token = generateJwtToken(newUser);
+      const token = generateJwtToken(existingUser[0]);
       res.cookie("jwt", token, { httpOnly: true, maxAge: 3600 * 1000 })
-      return res.status(200).json({ message: 'Logged in successfully!', user });
+      return res.status(200).json({ message: 'Logged in successfully!', user: existingUser[0] });
     })
 
   } 
