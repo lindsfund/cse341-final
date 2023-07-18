@@ -8,7 +8,35 @@ POST http://localhost:3000/mongodb/
 Content-Type: application/json;
 
 {
-    "title":"geeksForGeeks",
-    "description":"mongoDB tutorial from the geeks at GeeksForGeeks",
-    "source":"https://geeksforgeeks.org/mongodb-tutorial"
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
 }
+
+###
+GET http://localhost:3000/node/
+
+###
+POST http://localhost:3000/node/
+Content-Type: application/json;
+
+{
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
+}
+
+###
+GET http://localhost:3000/render/
+
+###
+POST http://localhost:3000/render/
+Content-Type: application/json;
+
+{
+    "title":"TESTING",
+    "description":"TESTING TESTING",
+    "sources":"https://www.testing.com"
+}
+
+### 

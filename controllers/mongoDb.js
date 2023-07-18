@@ -1,15 +1,22 @@
+const express = require('express');
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
+const validate = require('../middleware/validate');
+
+function sum(a,b){
+  const c = a + b;
+  return c;
+}
 
 const getAllMongoDbData = async (req, res) => {
   try {
     const result = await mongodb.getDb().db('learnResources').collection('mongoDB').find();
     result.toArray().then((mongoDb) => {
       res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(mongoDb);
+    res.status(200).json(mongoDb);
     });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+   res.status(500).json({ message: err.message });
   }
 };
 
@@ -35,12 +42,21 @@ const getMongoDbById = async (req, res) => {
 
 const createMongoDbData = async (req, res) => {
   try {
-    
     const mongoDb = {
       title: req.body.title,
       description: req.body.description,
       sources: req.body.sources
     };
+
+  console.log(mongoDb);
+    //validate data entered
+   const validateRes = validate.resourceValidation(mongoDb);
+    console.log(validateRes);
+
+    if(validateRes !== true) {
+
+      return res.status(400).json({message:`invalid values`, error: validate.resourceValidation.message});
+    }
     
     const response = await mongodb.getDb().db('learnResources').collection('mongoDB').insertOne(mongoDb);
     if (response.acknowledged) {
@@ -112,10 +128,7 @@ const deleteMongoDbData = async (req, res) => {
   }
 };
 
-function sum(a,b){
-  let c = a + b
-  return c;
-}
+
 
 module.exports = {
   getAllMongoDbData,
