@@ -5,7 +5,7 @@ const doc = {
     title: 'Course Learning Resources',
     description: 'This is our last team API Project for a Course Learning Resources Website'
   },
-  host: 'cse341-team3.onrender.com',
+  host: 'cse341final-87fh.onrender.com',
   schemes: ['https']
 };
 
