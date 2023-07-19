@@ -37,30 +37,12 @@ passport.deserializeUser((user, done) => {
 const homeRouter = require('./routes/index');
 app.use('/', homeRouter);
 
-const userRouter = require('./routes/users');
-app.use('/users', userRouter);
-
-const mongoRouter = require('./routes/mongoDB');
-app.use('/mongodb', mongoRouter);
-
-const nodeRouter = require('./routes/node');
-app.use('/node', nodeRouter);
-
-const renderRouter = require('./routes/render');
-app.use('/render', renderRouter);
-
-process.on('uncaughtException', (err, origin) => {
-    console.log(
-      process.stderr.fd,
-      `Caught exception: ${err}\n` + `Exception origin: ${origin}`
-    );
-  });
   
-  mongodb.initDb((err) => {
+mongodb.initDb((err) => {
     if (err) {
       console.log(err);
     } else {
       app.listen(port);
       console.log('Connected to DB and listening on ' + port);
     }
-  });
+});
