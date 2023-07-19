@@ -9,8 +9,8 @@ const nodeRouter = require('./node');
 const renderRouter = require('./render');
 
 router.get('/', (req, res) => {
-    res.send('HOMEPAGE');
     if (res.locals.loggedin) {
+        //console.log(res.locals);
         res.send(`Logged in as ${res.locals.user.firstName}.`);
     } else {
         res.send('Logged out.');

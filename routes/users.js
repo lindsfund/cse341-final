@@ -5,7 +5,7 @@ const userController = require('../controllers/user');
 const { isAuthenticated } = require('../middleware/authenticate');
 
 router.get('/',
-    //isAuthenticated, 
+    isAuthenticated, 
     userController.getAllUsers
 );
 

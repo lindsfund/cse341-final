@@ -25,14 +25,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(passport.initialize());
-// configureGoogleStrategy(passport);
-// passport.serializeUser((user, done) => {
-//   done(null, user);
-// });
-// passport.deserializeUser((user, done) => {
-//   done(null,user);
-// });
+app.use(passport.initialize());
+configureGoogleStrategy(passport);
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+passport.deserializeUser((user, done) => {
+  done(null,user);
+});
 
 const homeRouter = require('./routes/index');
 app.use('/', homeRouter);
