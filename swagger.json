@@ -5,7 +5,7 @@
     "description": "This is our last team API Project for a Course Learning Resources Website",
     "version": "1.0.0"
   },
-  "host": "cse341-team3.onrender.com",
+  "host": "cse341final-87fh.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
@@ -21,70 +21,6 @@
         }
       }
     },
-    "/login": {
-      "get": {
-        "description": "",
-        "responses": {
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "email": {
-                  "example": "any"
-                },
-                "password": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/google/callback": {
-      "get": {
-        "description": "",
-        "responses": {
-          "401": {
-            "description": "Unauthorized"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      }
-    },
-    "/logout": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/users/": {
       "get": {
         "description": "",
@@ -94,9 +30,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          },
-          "401": {
-            "description": "Unauthorized"
           },
           "500": {
             "description": "Internal Server Error"
